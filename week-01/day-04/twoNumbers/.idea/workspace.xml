@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dd59b88-2a2a-41f6-9122-5c54a0c9e39c" name="Default Changelist" comment="" />
+    <list default="true" id="56865b3c-1fcc-4a01-8542-988590688f8e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +14,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1UYmlgLSLiZLP68hX1YEc7E1zzd" />
+  <component name="ProjectId" id="1UYwFm2qOPYittMpWZvbT2YZnyz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,19 +24,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="helloMe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="helloMe" />
-      <module name="helloMe" />
+    <configuration name="twoNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="twoNumbers" />
+      <module name="twoNumbers" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.helloMe" />
+        <item itemvalue="Application.twoNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -57,12 +63,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8dd59b88-2a2a-41f6-9122-5c54a0c9e39c" name="Default Changelist" comment="" />
-      <created>1575542055182</created>
+      <changelist id="56865b3c-1fcc-4a01-8542-988590688f8e" name="Default Changelist" comment="" />
+      <created>1575546734509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575542055182</updated>
-      <workItem from="1575542063355" duration="748000" />
+      <updated>1575546734509</updated>
+      <workItem from="1575546738991" duration="1823000" />
     </task>
     <servers />
   </component>
@@ -70,29 +76,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="84" key="FileChooserDialogImpl" timestamp="1575542771572">
+    <state x="421" y="84" key="FileChooserDialogImpl" timestamp="1575548059282">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="84" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1575542771572" />
-    <state width="1281" height="170" key="GridCell.Tab.0.bottom" timestamp="1575542812722">
+    <state x="421" y="84" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1575548059282" />
+    <state width="1281" height="170" key="GridCell.Tab.0.bottom" timestamp="1575548566720">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575542812722" />
-    <state width="1281" height="170" key="GridCell.Tab.0.center" timestamp="1575542812722">
+    <state width="1281" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1575548566720" />
+    <state width="1281" height="170" key="GridCell.Tab.0.center" timestamp="1575548566720">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575542812722" />
-    <state width="1281" height="170" key="GridCell.Tab.0.left" timestamp="1575542812722">
+    <state width="1281" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1575548566720" />
+    <state width="1281" height="170" key="GridCell.Tab.0.left" timestamp="1575548566720">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575542812722" />
-    <state width="1281" height="170" key="GridCell.Tab.0.right" timestamp="1575542812722">
+    <state width="1281" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1575548566720" />
+    <state width="1281" height="170" key="GridCell.Tab.0.right" timestamp="1575548566720">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575542812722" />
-    <state x="91" y="0" key="new project wizard" timestamp="1575542775371">
+    <state width="1281" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1575548566720" />
+    <state x="91" y="0" key="new project wizard" timestamp="1575548060951">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1575542775371" />
+    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1575548060951" />
   </component>
 </project>
