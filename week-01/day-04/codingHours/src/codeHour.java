@@ -21,10 +21,18 @@ public class codeHour {
         int totalCodingHours;
         totalCodingHours = semester * workDays * codeHours;
 
+        int averageWorkingHoursPerWeek;
+        averageWorkingHoursPerWeek = 52;
+
+        int totalWorkingHoursPerSemester;
+        totalWorkingHoursPerSemester = semester * averageWorkingHoursPerWeek;
+
+        double averageCodingHoursPerSemester;
+        averageCodingHoursPerSemester = (float) totalCodingHours / (float) totalWorkingHoursPerSemester;
+
         System.out.println("total hours spent with coding in a semester: " + totalCodingHours);
-
-
-
+        System.out.println("total working hours per semester: " + totalWorkingHoursPerSemester);
+        System.out.println("percentage of coding hours in a semester by average 52 work hours weekly: " + averageCodingHoursPerSemester);
 
     }
 }
