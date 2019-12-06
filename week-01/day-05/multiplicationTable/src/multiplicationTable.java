@@ -20,9 +20,9 @@ public class multiplicationTable {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter a number");
 
-        int number = scanner.nextInt();
+        float number = scanner.nextFloat();
 
-        for ( int a = 0; a < 10; a++ ){
+        for ( float a = 0; a < 10; a++ ){
             System.out.println( number + " x " + ( a + 1 ) + " = " + ( number * ( a+1 ) ));
         }
 
