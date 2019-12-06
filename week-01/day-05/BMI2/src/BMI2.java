@@ -6,27 +6,27 @@ public class BMI2 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println( "Enter name: " );
-        String myName = scanner.nextLine();
+        String Name = scanner.nextLine();
 
         System.out.println( "Enter your weight (kg)" );
-        double myWeight = scanner.nextDouble();
+        double Weight = scanner.nextDouble();
 
         System.out.println( "Enter your height (m):" );
-        double myHeight = scanner.nextDouble();
-        myHeight = ( myHeight * myHeight );
+        double Height = scanner.nextDouble();
+        double squareHeight = ( Height * Height );
 
-        double BMI = ( myWeight / myHeight );
+        double BMI = ( Weight / squareHeight );
         System.out.println( "BMI: " + BMI );
 
         if ( BMI < 18.5 ) {
-            System.out.println( myName + ", you are underweight." );
+            System.out.println( Name + ", you are underweight." );
         } else if ( 18.6 < BMI  && BMI < 25 ) {
-            System.out.println( myName + ", you are healthy weight." );
+            System.out.println( Name + ", you are healthy weight." );
         } if ( BMI > 25.1 ) {
-            System.out.println( myName + ", you are overweight." );
+            System.out.println( Name + ", you are overweight." );
         }
 
-        System.out.println( "According to the more precise BMIPrime, " + myName );
+        System.out.println( "According to the more precise BMIPrime, " + Name );
         double BMIP = (BMI / 25);
         // System.out.println("which is " + BMIP + " for you" );
 
