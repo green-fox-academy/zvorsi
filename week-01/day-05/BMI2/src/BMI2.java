@@ -16,7 +16,6 @@ public class BMI2 {
         myHeight = ( myHeight * myHeight );
 
         double BMI = ( myWeight / myHeight );
-        BMI = BMI;
         System.out.println( "BMI: " + BMI );
 
         if ( BMI < 18.5 ) {
@@ -25,6 +24,18 @@ public class BMI2 {
             System.out.println( myName + ", you are healthy weight." );
         } if ( BMI > 25.1 ) {
             System.out.println( myName + ", you are overweight." );
+        }
+
+        System.out.println( "According to the more precise BMIPrime, " + myName );
+        double BMIP = (BMI / 25);
+        // System.out.println("which is " + BMIP + " for you" );
+
+        if ( BMIP <= 0.74 ){
+            System.out.println( "you are underweight." );
+        } else if ( 0.74 < BMIP && BMIP <= 1.00 ){
+            System.out.println( "you are normal weight." );
+        }if ( BMIP > 1.00){
+            System.out.println( "you are overweight by " + (int) (( BMIP - 1 ) * 100 ) + " %");
         }
     }
 }
