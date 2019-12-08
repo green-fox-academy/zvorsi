@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class chessTable {
     public static void main(String[] args) {
 
@@ -15,8 +13,8 @@ public class chessTable {
         //  % % % %
         //
 
-        String light = "[]";
-        String dark = "#";
+        String light = "[ ]";
+        String dark = "[X]";
         int table = 8;
 
         for (int i = 0; i < table; i++) {
