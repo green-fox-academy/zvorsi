@@ -15,7 +15,7 @@ public class triangle {
         System.out.println("enter a number");
         int a = scanner.nextInt();
 
-        for (int i = 0; i <= a; i++)
+        for (int i = 0; i < a; i++)
             {
             for (int j = 0; j <= i; j++)
                 {
