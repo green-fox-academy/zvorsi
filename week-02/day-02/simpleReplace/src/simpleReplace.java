@@ -5,6 +5,6 @@ public class simpleReplace {
         String replaced = example.replaceFirst("dishwasher","galaxy");
 
         System.out.println(replaced);
-        
+
     }
 }

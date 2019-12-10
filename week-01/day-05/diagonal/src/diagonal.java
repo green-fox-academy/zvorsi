@@ -9,7 +9,6 @@ public class diagonal {
             String c = scanner.nextLine();
             int square = scanner.nextInt();
 
-            //kiirja ay elso sort
             for (int i = 0; i < square; i++){
                 System.out.print(c);
             }

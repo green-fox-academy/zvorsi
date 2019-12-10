@@ -26,7 +26,7 @@ public class todo {
         //  - Buy milk
         //  - Download games
         //  - Diablo
-        for (String task: todo){
+        for (String task : todo) {
             System.out.println(task);
         }
     }

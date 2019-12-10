@@ -12,7 +12,7 @@ public class takesLonger {
         String part2 = quote.substring(quote.indexOf(" you expect"),quote.length());
         //System.out.println(part1);
         //System.out.println(part2);
- 
+
         System.out.println(part1 + insert + part2);
     }
 }

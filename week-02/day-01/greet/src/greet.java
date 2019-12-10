@@ -18,7 +18,7 @@ public class greet {
     }
 
     public static void greet(String b) {
-        System.out.print("Greetings, dear " + b + "!");
+        System.out.print("Greetings dear, " + b + "!");
     }
 
 }
