@@ -23,6 +23,10 @@ public class mapIntro2 {
         //checking if remove was succesfull, needs more thinking
         // System.out.println(books.get("978-1-60309-461-0"));
 
+        // kosz Pityu, ezt a logikat meg fel kell fogni tobb ev excel utan
+        books.values().remove("The Lab");
+
+
         books.put("978-1-60309-450-4", "They Called Us Enemy");
         books.put("978-1-60309-453-5", "Why Did We Trust Him?");
 
