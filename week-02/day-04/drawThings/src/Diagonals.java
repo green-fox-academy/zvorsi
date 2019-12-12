@@ -6,17 +6,17 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Diagonals {
     public static void mainDraw(Graphics graphics) {
 
+//        for (int i = 0; i < HEIGHT; i++) {
         int x = 0;
         int y = 0;
 
-        graphics.setColor(Color.RED);
-        graphics.drawLine(WIDTH, x, y, HEIGHT);
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(x, y, HEIGHT, WIDTH);
 
         if (x == 0 && y == 0) {
-            graphics.setColor(Color.GREEN);
+            graphics.setColor(Color.RED);
         }
-
-        graphics.drawLine(x, y, HEIGHT, WIDTH);
+        graphics.drawLine(WIDTH, x, y, HEIGHT);
 
     }
 
