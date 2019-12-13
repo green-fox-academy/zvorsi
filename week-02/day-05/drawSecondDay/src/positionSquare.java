@@ -1,37 +1,34 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class fourRectangles {
+public class positionSquare {
 
     public static void mainDraw(Graphics graphics) {
 
-        // draw four different size and color rectangles.
-        // avoid code duplication.
+        // create a function that draws one square and takes 3 parameters:
+        // the x and y coordinates of the square's top left corner and the graphics
+        // and draws a 50x50 square from that point.
+        // draw 3 squares with that function.
+        // avoid code duplication
 
         Random random = new Random();
-
-        for (int i = 0; i < 4; i++) {
-            int x = random.nextInt(HEIGHT);
-            int y = random.nextInt(WIDTH/2);
-            int b = random.nextInt(255);
-            int g = random.nextInt(255);
-            int r = random.nextInt(255);
-            int alpha = random.nextInt(100);
-            Color randomColor = new Color(r, g, b, alpha);
-            graphics.setColor(randomColor);
-            drawRectangle(graphics, x, y);
+        for (int i = 3; i > 0; i--) {
+            int x = random.nextInt(HEIGHT-50);
+            int y = random.nextInt(WIDTH)-50;
+            drawsquare(graphics, x, y);
         }
     }
 
-    private static void drawRectangle(Graphics graphics, int x, int y) {
-        graphics.fillRect(x, y, x, x);
+    private static void drawsquare(Graphics graphics, int x, int y) {
+        graphics.setColor(Color.GREEN);
+        graphics.fillRect(x, y, 50, 50);
     }
 
+
     // Don't touch the code below
-    static int WIDTH = 800;
+    static int WIDTH = 600;
     static int HEIGHT = 600;
 
     public static void main(String[] args) {
@@ -54,4 +51,5 @@ public class fourRectangles {
         }
 
     }
+
 }
