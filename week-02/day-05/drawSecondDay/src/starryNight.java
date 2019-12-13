@@ -21,10 +21,12 @@ public class starryNight {
             int c = random.nextInt(255);
             int a = random.nextInt(255);
             graphics.setColor(new Color(c, c, c, a));
-            graphics.fill3DRect(x, y, 10, 10, true);
+            graphics.fillRect(x, y, 5, 5);
         }
 
     }
+
+    private static void DrawStar 
 
     // Don't touch the code below
     static int WIDTH = 600;
