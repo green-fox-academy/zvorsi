@@ -1,12 +1,6 @@
-import sun.java2d.loops.DrawLine;
-
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.*;
-import java.awt.*;
-import java.util.HashMap;
 import java.util.Random;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class toTheCenter {
@@ -18,28 +12,29 @@ public class toTheCenter {
         // Draw at least 3 lines with that function using a loop.
 
         Random random = new Random();
-        int lineNumber = 10;
+        int lineNumber = random.nextInt(HEIGHT * 10);
+
+
         for (int i = 0; i < lineNumber; i++) {
-            int x = random.nextInt(HEIGHT);
+            int r = random.nextInt(250);
+            int g = random.nextInt(250);
+            int b = random.nextInt(250);
+            Color randomColor = new Color(r, g, b);
+            graphics.setColor(randomColor);
+            int x = random.nextInt(WIDTH);
             int y = random.nextInt(HEIGHT);
             drawALine(graphics, x, y);
         }
-
-    /*    Random random = new Random();
-        for (int i = 0; i < lineNumber; i++) {
-            int x = random.nextInt(HEIGHT);
-            int y = random.nextInt(HEIGHT);
-            graphics.drawLine(HEIGHT / 2, WIDTH / 2, x, y);
-        }
-    */    }
+    }
 
     private static void drawALine(Graphics graphics, int x, int y) {
-        graphics.drawLine(HEIGHT / 2, WIDTH / 2, x, y);
+        graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
     }
 
 
-    static int WIDTH = 320;
-    static int HEIGHT = 320;
+
+    static int WIDTH = 800;
+    static int HEIGHT = 600;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
@@ -47,7 +42,8 @@ public class toTheCenter {
         ImagePanel panel = new ImagePanel();
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         jFrame.add(panel);
-        jFrame.setLocationRelativeTo(null);
+        jFrame.setLocation(0,0);
+//        jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
     }
