@@ -1,3 +1,5 @@
+package postIt;
+
 public class postIt {
 
 private String backgroundColor;
@@ -25,14 +27,6 @@ public void print(){
     System.out.println("postit bgcolor is: " + backgroundColor + ", post it text is: " + text + ", text color is: " + textColor);
 }
 
-    public static void main(String[] args) {
-        postIt postIt1 = new postIt("Color.ORANGE", "Idea 1", "Color.BLUE");
-        postIt postIt2 = new postIt("Color.PINK", "Awesome!", "Color.BLACK");
-        postIt postIt3 = new postIt("Color.YELLOW", "Superb!", "Color.GREEN");
 
-        postIt1.print();
-        postIt2.print();
-        postIt3.print();
-    }
 
 }
