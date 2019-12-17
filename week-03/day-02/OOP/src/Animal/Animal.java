@@ -7,10 +7,10 @@ public class Animal {
     private Integer thirst;
 
 
-    public Animal(String animalName, Integer hunger, Integer thirst){
+    public Animal(String animalName){
         this.animalName = animalName;
-        this.hunger = hunger;
-        this.thirst = thirst;
+        this.hunger = 50;
+        this.thirst = 50;
     }
 
     public void eat(){
