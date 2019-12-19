@@ -31,8 +31,6 @@ public class toTheCenter {
         graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
     }
 
-
-
     static int WIDTH = 800;
     static int HEIGHT = 600;
 
