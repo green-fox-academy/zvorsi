@@ -11,6 +11,12 @@ public class Student extends Person {
         this.skippedDays = skippedDays;
     }
 
+    public Student(){
+        super ();
+        this.previousOrg = "The School of Life";
+        this.skippedDays = 0;
+    }
+
     public Student(String name, Integer age, String gender, String previousOrg){
         super (name, age, gender);
         this.previousOrg = previousOrg;
@@ -18,8 +24,8 @@ public class Student extends Person {
     }
 
     @Override
-    public String Introduce(){
-        return super.Introduce() + " from " + previousOrg + " who skipped " + skippedDays + " days from the course already.";
+    public void specificIntroduce(){
+        System.out.println(" from " + previousOrg + " who skipped " + skippedDays + " days from the course already.");
     }
 
     @Override

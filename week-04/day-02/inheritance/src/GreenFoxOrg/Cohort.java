@@ -4,17 +4,25 @@ import java.util.ArrayList;
 
 public class Cohort extends Person {
 
-    String cohortName;
+    String name;
+    ArrayList<Student> students;
+    ArrayList<Mentor> mentors;
 
-    public Cohort(String cohortName){
-        this.cohortName = cohortName;
+    public Cohort(String name){
+        this.name = name;
+        this.students = new ArrayList<>();
+        this.mentors = new ArrayList<>();
     }
 
-/*    public void addStudent(){
-        ArrayList<Student> students = new Student();
+    public void addStudent(Student student){
+        this.students.add(student);
     }
 
-    public void addMentor(){
-        ArrayList<Mentor> mentors = new Mentor();
-    }*/
+    public void addMentor(Mentor mentor){
+        this.mentors.add(mentor);
+    }
+
+    public String info(){
+        return "The " + name + " cohort has " + students.size() + " students and " + mentors.size() + " mentors.";
+    }
 }

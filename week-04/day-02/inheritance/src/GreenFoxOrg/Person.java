@@ -13,12 +13,19 @@ public class Person {
     }
 
     public Person(){
-
+        this.name = "Jane Doe";
+        this.age = 30;
+        this.gender = "female";
     }
 
 
-    public String Introduce(){
-        return "Hi, my name is: " + name + ", a " + age + " year old " + gender;
+    public void introduce(){
+        System.out.print("Hi, my name is: " + name + ", a " + age + " year old " + gender);
+        specificIntroduce();
+    }
+
+    public void specificIntroduce(){
+        System.out.println();
     }
 
     public String getGoal(){

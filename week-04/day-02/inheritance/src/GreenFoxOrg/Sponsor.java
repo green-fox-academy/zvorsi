@@ -5,15 +5,21 @@ public class Sponsor extends Person {
     String company;
     Integer hiredStudents;
 
-    public Sponsor(String name, Integer age, String gender){
+    public Sponsor(String name, Integer age, String gender, String company){
         super(name, age, gender);
         this.company = company;
         this.hiredStudents = 0;
     }
 
+    public Sponsor(){
+        super();
+        this.company = "Google";
+        this.hiredStudents = 0;
+    }
+
     @Override
-    public String Introduce(){
-        return super.Introduce() + " who represents " + company + " and hireed " + hiredStudents + " students so far.";
+    public void specificIntroduce(){
+        System.out.println(" who represents " + company + " and hired " + hiredStudents + " students so far.");
     }
 
     public void hire(){
