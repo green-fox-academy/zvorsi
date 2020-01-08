@@ -1,8 +1,7 @@
 package ComparableDomino;
-import java.util.Arrays;
 
+public class Domino implements Comparable<Domino>{
 
-public class Domino {
     private final int left;
     private final int right;
 
@@ -22,6 +21,11 @@ public class Domino {
     @Override
     public String toString() {
         return "[" + left + ", " + right + "]";
+    }
+
+    @Override
+    public int compareTo(Domino o) {
+        return Integer.compare(this.left, o.left);
     }
 }
 
