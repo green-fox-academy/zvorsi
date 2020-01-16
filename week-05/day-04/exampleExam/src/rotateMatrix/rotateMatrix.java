@@ -1,7 +1,5 @@
 package rotateMatrix;
 
-import java.util.Arrays;
-
 public class rotateMatrix {
     public static void main(String[] args) {
 
@@ -11,11 +9,26 @@ public class rotateMatrix {
                 {1, 2, 3, 4},
                 {1, 2, 3, 4}};
 
-        System.out.println(Arrays.deepToString(matrix));
+        for (int[] x : matrix)
+        {
+            for (int y : x)
+            {
+                System.out.print(y + " ");
+            }
+            System.out.println();
+        }
 
         rotateMatrix(matrix);
+        System.out.println("\nrotated matrix, printing for checking");
 
-        System.out.println(Arrays.deepToString(rotateMatrix(matrix)));
+        for (int[] x : rotateMatrix(matrix))
+        {
+            for (int y : x)
+            {
+                System.out.print(y + " ");
+            }
+            System.out.println();
+        }
     }
 
     static int[][] rotateMatrix(int[][] matrix) {
