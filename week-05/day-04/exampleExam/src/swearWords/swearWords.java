@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 public class swearWords {
     public static void main(String[] args) throws IOException {
@@ -15,7 +17,7 @@ public class swearWords {
         System.out.println(swearText);
 
         System.out.println(filterBadWords(swearText));
-        
+
     }
 
     public static List<String> readFile(String fileName) {
@@ -28,12 +30,11 @@ public class swearWords {
         return null;
     }
 
-    public static int filterBadWords(List<String> swearText) {
+    public static int filterBadWords(List<String> swearText) throws IOException {
 
         ArrayList<String> badWords = new ArrayList<>();
-        //a badWords array listbe berakjuk a felsorolt bad words, es removoljuk a swearText listabol,
-        // es megszamoljuk, hányat removeolt
-        //['fuck', 'bloody', 'cock', 'shit', 'fucker', 'fuckstick', 'asshole', 'dick', 'piss', 'cunt']
+        ArrayList<String> friendlyText = new ArrayList<>();
+
         badWords.add("fuck");
         badWords.add("bloody");
         badWords.add("cock");
@@ -47,20 +48,23 @@ public class swearWords {
 
         int counter = 0;
 
-        for (String badWord : badWords) {
-            for (String line : swearText) {
-                String[] words = line.split(" ");
-                for (String word : words) {
-                    if (word.contains(badWord)) {
-                        counter ++;
-                        //System.out.println("have found one");
+        for (String line : swearText) {
+            String[] words = line.split(" ");
+            ArrayList<String> wordsList = new ArrayList<>(Arrays.asList(words));
+            for (String badWord : badWords) {
+                for (int i = 0; i < wordsList.size(); i++) {
+                    if (wordsList.get(i).toUpperCase().contains(badWord.toUpperCase())) {
+                        counter++;
+                        System.out.println(wordsList.get(i));
+                        wordsList.remove(i);
+                        i--;
                     }
                 }
-                //irja egy uj file-ba a megmaradt textet
-                //utana olvassa be azt is egy arraylistbe, es hasonlitsa ossze a hosszukat
-                //return a kulonbseg
             }
+            friendlyText.add(String.join(" ", wordsList));
         }
+        Path path = Paths.get("src/swearWords/friendlyText.txt");
+        Files.write(path, friendlyText);
         return counter;
     }
 }
