@@ -1,14 +1,19 @@
 package com.greenfoxacademy.bankofsimba.models;
 
+import java.text.DecimalFormat;
+
 public class BankAccount {
 
     private String name;
-    private int balance;
+    private double balance;
     private String animalType;
+    private String currency;
 
-    public BankAccount(String name, int balance, String animalType) {
+
+    public BankAccount(String name, double balance, String currency, String animalType) {
         this.name = name;
         this.balance = balance;
+        this.currency = currency;
         this.animalType = animalType;
     }
 
@@ -20,11 +25,11 @@ public class BankAccount {
         this.name = name;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -34,5 +39,17 @@ public class BankAccount {
 
     public void setAnimalType(String animalType) {
         this.animalType = animalType;
+    }
+
+    public String getBalance2Decimal() {
+        return String.format("%.2f", balance);
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }

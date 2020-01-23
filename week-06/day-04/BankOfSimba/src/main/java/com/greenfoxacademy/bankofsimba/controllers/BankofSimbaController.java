@@ -15,7 +15,10 @@ public class BankofSimbaController {
     List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankofSimbaController(){
-        bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
+        bankAccounts.add(new BankAccount("Simba", 2000, "zebra", "lion"));
+        bankAccounts.add(new BankAccount("Nala", 2005, "Grant", "lioness"));
+        bankAccounts.add(new BankAccount("Pumba", 20, "bug", "ngiri"));
+        bankAccounts.add(new BankAccount("Mufasa", 5000, "gnu", "lionking"));
     }
 
     @GetMapping("/show")
@@ -25,7 +28,9 @@ public class BankofSimbaController {
         return "show";
     }
 
-   /* public BankAccount newAccount (String name, int balance, String animalType){
-        return newAccount(name, balance, animalType);
-    }*/
+    @GetMapping("/page")
+    public String page(Model model){
+        model.addAttribute("text", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+        return "page";
+    }
 }

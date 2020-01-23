@@ -1,0 +1,25 @@
+td{
+    border: brown 1px solid;
+    padding: 15px;
+}
+
+table{
+    border: darkorange 2px solid;
+    width: 60%;
+    padding: 3px;
+    position: relative;
+    left: 20%;
+}
+
+td{
+    width: 25%;
+}
+
+#tablehead{
+    font-size: larger;
+    padding: 10px;
+}
+
+.balance{
+    text-align: center;
+}
