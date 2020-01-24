@@ -1,16 +1,18 @@
 package com.orsi.webshop.basicwebshop.models;
 
-public class shopItems {
+public class shopItem {
 
     private String name;
     private String description;
     private double price;
+    private String currency;
     private int quantityOfStock;
 
-    public shopItems(String name, String description, double price, int quantityOfStock) {
+    public shopItem(String name, String description, double price, String currency, int quantityOfStock) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.currency = currency;
         this.quantityOfStock = quantityOfStock;
     }
 
@@ -40,6 +42,14 @@ public class shopItems {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public int getQuantityOfStock() {
