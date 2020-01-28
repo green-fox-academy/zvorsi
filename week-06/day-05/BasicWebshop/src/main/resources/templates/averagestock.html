@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>My basic webshop, price order</title>
+    <title>My basic webshop, average stock</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         </td>
     </tr>
     <tr><br>
-        <td class="h2">price order
+        <td class="h2">Average stock is <span th:text="${stock}"></span>
         </td>
     </tr>
     </thead>

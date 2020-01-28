@@ -13,6 +13,10 @@ body {
     margin-bottom: 15px;
 }
 
+.h2{
+    font-size: smaller;
+}
+
 .button {
     background-color: rgb(46, 176, 7);
     border-radius: 5px;

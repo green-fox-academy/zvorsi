@@ -1,6 +1,6 @@
 package com.orsi.webshop.basicwebshop.models;
 
-public class shopItem {
+public class shopItem implements Comparable<shopItem>{
 
     private String name;
     private String description;
@@ -19,6 +19,12 @@ public class shopItem {
     public String getPrice2Decimal() {
         return String.format("%.2f", price);
     }
+
+    public String getStock2Decimal() {
+        return String.format("%.2f", quantityOfStock);
+    }
+
+
 
     public String getName() {
         return name;
@@ -58,5 +64,10 @@ public class shopItem {
 
     public void setQuantityOfStock(int quantityOfStock) {
         this.quantityOfStock = quantityOfStock;
+    }
+
+    @Override
+    public int compareTo(shopItem o) {
+        return this.price.compareTo(o.price);
     }
 }

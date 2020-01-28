@@ -15,7 +15,7 @@
         </td>
     </tr>
     <tr><br>
-        <td class="h2">price order
+        <td class="h2">most expensive item
         </td>
     </tr>
     </thead>
@@ -40,11 +40,11 @@
         <th>Quantity on Stock</th>
     </tr>
     </thead>
-    <tr th:each=" items : ${shopItems}" class="show">
-        <td><span th:text="${items.name}"></span></td>
-        <td><span th:text="${items.description}"></span></td>
-        <td class="right"><span th:text="${items.getPrice2Decimal()} + ' ' + ${items.currency}"></span></td>
-        <td class="right"><span th:text="${items.quantityOfStock}"></span></td>
+    <tr class="show">
+        <td><span th:text="${mostExpensiveItem.name}"></span></td>
+        <td><span th:text="${mostExpensiveItem.description}"></span></td>
+        <td class="right"><span th:text="${mostExpensiveItem.getPrice2Decimal()} + ' ' + ${mostExpensiveItem.currency}"></span></td>
+        <td class="right"><span th:text="${mostExpensiveItem.quantityOfStock}"></span></td>
     </tr>
 
 </table>
