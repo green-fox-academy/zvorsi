@@ -50,4 +50,15 @@ public class BasicWebShopController {
 
         return "priceOrder";
     }
+
+    @GetMapping("/contains")
+    public String contains(Model model){
+
+        List<shopItem> contains = shopItems.stream().filter(value -> value.getDescription().toUpperCase().contains("NIKE"))
+                .collect(Collectors.toList());
+
+        model.addAttribute("shopItems", contains );
+
+        return "contains";
+    }
 }
