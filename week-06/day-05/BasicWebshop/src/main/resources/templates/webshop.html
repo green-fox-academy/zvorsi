@@ -11,11 +11,16 @@
 
     <thead>
     <tr>
-        <td class="h1"><a href="/webshop">my shop</a>
+        <td class="h1">
+            <a href="/webshop">my shop</a>
+            <form action="/search" method="post">
+                <input class="search" name="name" placeholder="search..." type="search">
+                <button type="submit" class="searchbutton">Search</button>
+            </form>
         </td>
     </tr>
     <tr><br>
-        <td class="h2">only available items
+        <td class="h2">welcome to my continuously evolving webshop
         </td>
     </tr>
     </thead>
@@ -39,6 +44,7 @@
         <th>Price</th>
         <th>Quantity on Stock</th>
     </tr>
+
     </thead>
     <tr th:each=" items : ${shopItems}">
         <td><span th:text="${items.name}"></span></td>

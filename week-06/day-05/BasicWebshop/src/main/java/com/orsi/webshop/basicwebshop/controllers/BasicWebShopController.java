@@ -4,6 +4,8 @@ import com.orsi.webshop.basicwebshop.models.shopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -88,6 +90,24 @@ public class BasicWebShopController {
         if(mostExpensiveItemOptional.isPresent()){
             model.addAttribute("mostExpensiveItem", mostExpensiveItemOptional.get());
             return "highestprice";
+        }
+
+        return "redirect:/webshop";
+    }
+
+    @PostMapping("/search")
+    public String search(Model model, @RequestParam String name) {
+        List<shopItem> availableItems = shopItems.stream().filter(item -> item.getQuantityOfStock() > 0)
+                .collect(Collectors.toList());
+
+        Optional<shopItem> searchedItemOptional = availableItems.stream()
+                .filter(value -> value.getDescription().toUpperCase().contains(name.toUpperCase())
+                        || value.getName().toUpperCase().contains(name.toUpperCase()))
+                .findAny();
+
+        if (searchedItemOptional.isPresent()){
+            model.addAttribute("searchedItem", searchedItemOptional.get());
+            return "search";
         }
 
         return "redirect:/webshop";
