@@ -21,8 +21,10 @@
         Please provide a name so you can associate that with your pet!
     </div>
 
-    <form>
-        <label for="name">Name: </label><input type="text" id="name" name="name" placeholder="name"> <button type="submit" value="submit">GO</button>
+    <form th:method="post" th:action="@{/login}">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="name">
+        <button type="submit" value="submit">GO</button>
     </form>
 
 </body>

@@ -1,26 +1,41 @@
 package com.orsi.foxclub.controllers;
 
+import com.orsi.foxclub.Service.FoxService;
+import com.orsi.foxclub.models.Fox;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class foxClubController {
+    FoxService foxService;
+
+    @Autowired
+    public foxClubController(FoxService foxService) {
+        this.foxService = foxService;
+    }
 
     @GetMapping("/index")
-    public String index(){
-        return "index";
+    public String index(@RequestParam(value = "name", required = false) String name, Model model) {
+        model.addAttribute("fox", foxService.findByName(name));
+        model.addAttribute("foxes", foxService.returnAll());
+
+        //model.addAttribute("fox", foxService.findByName(name));
+      return "index";
     }
 
     @GetMapping("/login")
-    public String getLogin(){
+    public String getLogin() {
         return "login";
     }
 
     @PostMapping("/login")
-    public String postLogin(@RequestParam String foxName){
-        return "index";
+    public String receiveName(@RequestParam("name") String name) {
+        foxService.addFox(new Fox(name));
+        return "redirect:/index?name=" + name;
     }
 
 }

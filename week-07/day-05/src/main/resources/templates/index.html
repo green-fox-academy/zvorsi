@@ -12,18 +12,26 @@
 <body>
     <ul>
         <li><a href="/login">login</a></li>
-        <li><a href="/">Information</a></li>
+        <li><a href="/index">Information</a></li>
     </ul>
 
     <img src="greenfox.png" height="200" width="200">
 
-    <div>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</div>
+    <div>
+        <p th:text="|This is ${fox.getFoxName()}. Currently living on ${fox.getFood()} and ${fox.getDrink()}. He knows 2 tricks.|"></p>
+    </div>
 
     <h2>Known tricks</h2>
 
     <ul>
         <li>write HTML</li>
         <li>code in Java</li>
+    </ul>
+
+    <h3>already known foxes</h3>
+
+    <ul th:each="onefox : ${foxes}">
+        <li><p th:text="|${onefox.getFoxName()} eating ${onefox.getFood()} drinking ${onefox.getDrink()}|"></p></li>
     </ul>
 
 </body>
