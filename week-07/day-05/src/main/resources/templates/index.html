@@ -11,27 +11,27 @@
 
 <body>
     <ul>
-        <li><a href="/login">login</a></li>
-        <li><a href="/index">Information</a></li>
+        <li><a href="/login">Login page</a></li>
+        <li><a href="/index">Information of your Fox</a></li>
+        <li><a href="/nutrition-store">Nutrition Store</a></li>
     </ul>
 
     <img src="greenfox.png" height="200" width="200">
 
     <div>
-        <p th:text="|This is ${fox.getFoxName()}. Currently living on ${fox.getFood()} and ${fox.getDrink()}. He knows 2 tricks.|"></p>
+        <p th:text="|This is ${fox.getFoxName()}. Currently living on ${fox.getFoxFood()} and ${fox.getFoxDrink()}. ${fox.getFoxName()} knows 2 tricks.|"></p>
     </div>
 
     <h2>Known tricks</h2>
 
-    <ul>
-        <li>write HTML</li>
-        <li>code in Java</li>
+    <ul th:each="trick : ${fox.getTricks()}">
+        <li th:text="${trick}"></li>
     </ul>
 
-    <h3>already known foxes</h3>
+    <h3>Foxes already playing</h3>
 
     <ul th:each="onefox : ${foxes}">
-        <li><p th:text="|${onefox.getFoxName()} eating ${onefox.getFood()} drinking ${onefox.getDrink()}|"></p></li>
+        <li><p th:text="|${onefox.getFoxName()} eating ${onefox.getFoxFood()} drinking ${onefox.getFoxDrink()} and know(s) ${onefox.getTricks()}|"></p></li>
     </ul>
 
 </body>

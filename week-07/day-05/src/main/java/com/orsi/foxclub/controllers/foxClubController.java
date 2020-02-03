@@ -2,6 +2,9 @@ package com.orsi.foxclub.controllers;
 
 import com.orsi.foxclub.Service.FoxService;
 import com.orsi.foxclub.models.Fox;
+import com.orsi.foxclub.models.FoxDrink;
+import com.orsi.foxclub.models.FoxFood;
+import com.orsi.foxclub.models.FoxTrick;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +25,7 @@ public class foxClubController {
     public String index(@RequestParam(value = "name", required = false) String name, Model model) {
         model.addAttribute("fox", foxService.findByName(name));
         model.addAttribute("foxes", foxService.returnAll());
-
-        //model.addAttribute("fox", foxService.findByName(name));
-      return "index";
+        return "index";
     }
 
     @GetMapping("/login")
@@ -38,4 +39,20 @@ public class foxClubController {
         return "redirect:/index?name=" + name;
     }
 
+    @GetMapping("/nutrition-store")
+    public String getNutritionStore(Model model){
+/*
+        for (FoxFood food : FoxFood.values()) {
+            System.out.println(food);
+        }
+*/
+        model.addAttribute("foxFoods", FoxFood.values());
+        model.addAttribute("foxDrinks", FoxDrink.values());
+        return "nutrition-store";
+    }
+
+    @PostMapping("/nutrition-store")
+    public String nutritionStore(){
+        return "nutrition-store";
+    }
 }
