@@ -10,13 +10,13 @@ import java.util.List;
 
 @Service
 public class FoxServiceImpl implements FoxService {
+
     List<Fox> foxes = new ArrayList<>();
     List<FoxTrick> tricks = new ArrayList<>();
 
 
     @Override
     public void addFox(Fox fox) {
-
         //if String name = már létező Fox {annak az info oldalat adja vissza}
         // else {foxes.add(fox)}
         //.anyMatch?
@@ -24,10 +24,11 @@ public class FoxServiceImpl implements FoxService {
         foxes.add(fox);
     }
 
+
     @Override
     public Fox findByName(String name) {
         if (name == null) {
-            return new Fox(" ENTER a FOX name on LOGIN page ");
+            return new Fox(null);
         } else {
             return foxes
                     .stream()
@@ -35,6 +36,13 @@ public class FoxServiceImpl implements FoxService {
                     .findFirst()
                     .get();
         }
+    }
+
+    @Override
+    public boolean isFoxAvailable(String name) {
+        return foxes
+                .stream()
+                .anyMatch(f -> f.getFoxName().equals(name));
     }
 
     @Override
@@ -50,10 +58,11 @@ public class FoxServiceImpl implements FoxService {
                 .get();
     }
 
-    @Override
-    public FoxFood changeFood() {
+
+/*    @Override
+        public FoxFood changeFood() {
         return null;
     }
-
+*/
 
 }

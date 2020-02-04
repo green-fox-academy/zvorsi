@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>fox club nutrition store</title>
+    <title>fox club trick center</title>
     <link rel="stylesheet" href="../static/style.css" type="text/css">
 
 </head>
@@ -18,19 +18,12 @@
         <li><a href="/trick-center">trick center</a></li>
     </ul>
 
-    <form th:method="post" th:action="@{/nutrition-store}">
-
-        <label for="FoxFood">Food: </label>
-        <select id="FoxFood" name = "foxFoods">
-            <option  th:each="foxFood : ${foxFoods}" th:value="${foxFood.name()}" th:text="${foxFood.name()}"></option>
-        </select>
-
-        <label for="FoxDrink">Drink: </label>
-        <select id="FoxDrink"  name="foxDrinks" >
-            <option th:each="foxDrink : ${foxDrinks}" th:value="${foxDrink.name()}" th:text="${foxDrink.name()}"></option>
+    <form th:method="post" th:action="@{/trick-center.html}">
+        <label for="Trick">Trick: </label>
+        <select id="Trick">
+            <option th:each="trick : ${tricks}" th:value="${trick.name()}" th:text="${trick.name()}"></option>
         </select>
         <button type="submit" value="submit">GO</button>
-
     </form>
 
 </body>

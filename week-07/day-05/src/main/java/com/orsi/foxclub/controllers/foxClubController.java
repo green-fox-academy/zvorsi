@@ -35,24 +35,32 @@ public class foxClubController {
 
     @PostMapping("/login")
     public String receiveName(@RequestParam("name") String name) {
+
         foxService.addFox(new Fox(name));
         return "redirect:/index?name=" + name;
     }
 
     @GetMapping("/nutrition-store")
     public String getNutritionStore(Model model){
-/*
-        for (FoxFood food : FoxFood.values()) {
-            System.out.println(food);
-        }
-*/
         model.addAttribute("foxFoods", FoxFood.values());
         model.addAttribute("foxDrinks", FoxDrink.values());
         return "nutrition-store";
     }
 
     @PostMapping("/nutrition-store")
-    public String nutritionStore(){
+    public String nutritionStore(@RequestParam ("foxFoods") FoxFood foxFoods, @RequestParam ("foxDrinks") FoxDrink foxDrinks, Model model){
+        System.out.println();
         return "nutrition-store";
+    }
+
+    @GetMapping("/trick-center")
+    public String getTrickCenter(Model model){
+        model.addAttribute("tricks", FoxTrick.values());
+        return "trick-center";
+    }
+
+    @PostMapping("/trick-center")
+    public String trickCenter(){
+        return "trick-center";
     }
 }
