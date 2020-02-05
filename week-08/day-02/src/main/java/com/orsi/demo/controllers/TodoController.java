@@ -20,10 +20,9 @@ public class TodoController {
     }
 
     @GetMapping({"/list", "/"})
-
     public String list(Model model) {
-
-        return "this is my first Todo";
+        model.addAttribute("todos", todoRepository.findById(1l).get());
+        return "todo";
     }
 
 
