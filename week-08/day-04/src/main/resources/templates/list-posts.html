@@ -30,7 +30,7 @@
             <td th:text="${post.likeCounter}"></td>
             <td><a th:href="@{'/reddit' + ${post.id} (voting = 1)}"><img src="/upvote.png" alt="" height="75"></a></td>
             <td><a th:href="@{'/reddit' + ${post.id} (voting = -1)}"><img src="/downvote.png" alt="" height="75"></a></td>
-            <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
+            <td><a th:href="${post.url}" th:text="${post.title}" target="_blank"></a></td>
             <td th:text="${post.date}"></td>
 
         </tr>

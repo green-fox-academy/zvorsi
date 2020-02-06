@@ -17,4 +17,8 @@ public interface RedditService {
     void voting(Long id, Integer voting);
 
     void save(Reddit reddit);
+
+    List<Reddit> findByAllOrder();
+
+
 }

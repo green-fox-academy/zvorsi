@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class RedditServiceImplementation implements RedditService{
+
     RedditRepository redditRepository;
 
     @Autowired
@@ -37,9 +40,9 @@ public class RedditServiceImplementation implements RedditService{
     @Override
     public void voting(Long id, Integer voting) {
         if (voting == 1 || voting == -1 && redditRepository.findById(id).isPresent()){
-            Optional<Reddit> akarmi = redditRepository.findById(id);
-            akarmi.get().setLikeCounter(akarmi.get().getLikeCounter() + voting);
-            redditRepository.save(akarmi.get());
+            Optional<Reddit> voted = redditRepository.findById(id);
+            voted.get().setLikeCounter(voted.get().getLikeCounter() + voting);
+            redditRepository.save(voted.get());
         }
     }
 
@@ -47,4 +50,11 @@ public class RedditServiceImplementation implements RedditService{
     public void save(Reddit reddit) {
         redditRepository.save(reddit);
     }
+
+    @Override
+    public List<Reddit> findByAllOrder() {
+        return redditRepository.findAllByOrder();
+    }
+
+
 }

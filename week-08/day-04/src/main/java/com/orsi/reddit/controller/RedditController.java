@@ -18,7 +18,7 @@ public class RedditController {
 
     @GetMapping("/reddit")
     public String reddit(Model model){
-        model.addAttribute("posts", redditService.returnAll());
+        model.addAttribute("posts", redditService.findByAllOrder());
         return "list-posts";
     }
 
