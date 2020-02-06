@@ -21,9 +21,7 @@ public class TodoController {
 
     @GetMapping({"/list", "/"})
     public String list(Model model) {
-        model.addAttribute("todos", todoRepository.findById(1l).get());
+        model.addAttribute("todos", todoRepository.findAll());
         return "todo";
     }
-
-
 }

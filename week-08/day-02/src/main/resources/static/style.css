@@ -1,0 +1,12 @@
+td {
+    padding: 15px;
+    border: lightgray 2px solid;
+}
+tr{
+    border: lightgray 2px solid;
+}
+
+thead {
+    font-size: x-large;
+    padding: 15px;
+}

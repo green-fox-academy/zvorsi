@@ -23,8 +23,8 @@ public class Todo {
 
     public Todo(String title, boolean urgent, boolean done) {
     this.title = title;
-    this.urgent = false;
-    this.done = false;
+    this.urgent = urgent;
+    this.done = done;
     }
 
     public Long getId() {
@@ -44,7 +44,7 @@ public class Todo {
     }
 
     public boolean isUrgent() {
-        return false;
+        return urgent;
     }
 
     public void setUrgent(boolean urgent) {
@@ -52,7 +52,7 @@ public class Todo {
     }
 
     public boolean isDone() {
-        return false;
+        return done;
     }
 
     public void setDone(boolean done) {
