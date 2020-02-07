@@ -19,6 +19,11 @@ public interface RedditService {
     void save(Reddit reddit);
 
     List<Reddit> findByAllOrder();
+    List<Reddit> findByAllOrderByPage(Long page);
+    Long getPageNumber();
 
+    Long pageTotalNumber();
+
+    List<Long> pageList();
 
 }

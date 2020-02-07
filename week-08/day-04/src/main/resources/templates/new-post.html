@@ -11,49 +11,47 @@
 
 <body>
 
-    <h1>
-        Submit new post
-    </h1>
+<h1>
+    Submit new post
+</h1>
 
-    <hr>
+<hr>
 
-    <h3>
-        <a href="/reddit">trending posts</a>
-    </h3>
+<h3>
+    <a href="/reddit">trending posts</a>
+</h3>
 
-    <hr>
+<hr>
 
-    <form th:method="post" th:action="@{/new-post}">
+<form th:method="post" th:action="@{/new-post}">
 
-        <table>
+    <table>
 
-            <tr>
+        <tr>
 
-                <td><label for="title">Title:</label></td>
-                <td><input type="text" name="title" id="title"></td>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" name="title" id="title"></td>
 
-            </tr>
+        </tr>
 
-            <tr>
+        <tr>
 
-                <td><label for="url">URL:</label></td>
-                <td><input type="text" name="url" id="url"></td>
+            <td><label for="url">URL:</label></td>
+            <td><input type="text" name="url" id="url"></td>
 
-            </tr>
+        </tr>
 
-        </table>
+        <tr>
 
-        <table>
+            <td colspan="2">
+                <button type="submit" value="submit"><img src="/button2.png"><br>submit</button>
+            </td>
 
-            <tr>
+        </tr>
 
-                <td><button type="submit" value="submit"><img src="/button2.png" height="75"><br>submit</button></td>
+    </table>
 
-            </tr>
-
-        </table>
-
-    </form>
+</form>
 
 </body>
 

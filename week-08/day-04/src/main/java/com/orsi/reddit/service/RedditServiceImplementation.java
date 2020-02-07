@@ -12,9 +12,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class RedditServiceImplementation implements RedditService{
+public class RedditServiceImplementation implements RedditService {
 
     RedditRepository redditRepository;
+    Long pagenumber = 1L;
+
+    @Override
+    public Long getPageNumber() {
+        return pagenumber;
+    }
 
     @Autowired
     public RedditServiceImplementation(RedditRepository redditRepository) {
@@ -39,7 +45,7 @@ public class RedditServiceImplementation implements RedditService{
 
     @Override
     public void voting(Long id, Integer voting) {
-        if (voting == 1 || voting == -1 && redditRepository.findById(id).isPresent()){
+        if (voting == 1 || voting == -1 && redditRepository.findById(id).isPresent()) {
             Optional<Reddit> voted = redditRepository.findById(id);
             voted.get().setLikeCounter(voted.get().getLikeCounter() + voting);
             redditRepository.save(voted.get());
@@ -53,7 +59,27 @@ public class RedditServiceImplementation implements RedditService{
 
     @Override
     public List<Reddit> findByAllOrder() {
-        return redditRepository.findAllByOrder();
+        return redditRepository.findAllByOrder(RedditRepository.postsByPage);
+    }
+
+    @Override
+    public List<Reddit> findByAllOrderByPage(Long page) {
+        pagenumber = page;
+        return redditRepository.findAllByOrdOrderByLikeCounterPaging(page, RedditRepository.postsByPage);
+    }
+
+    @Override
+    public Long pageTotalNumber() {
+        return redditRepository.count() / RedditRepository.postsByPage + 1;
+    }
+
+    @Override
+    public List<Long> pageList() {
+        List<Long> pageList = new ArrayList<>();
+        for (int i = 1; i < pageTotalNumber() + 1; i++) {
+            pageList.add((long) i);
+        }
+        return pageList;
     }
 
 

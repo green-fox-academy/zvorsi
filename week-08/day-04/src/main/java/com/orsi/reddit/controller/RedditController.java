@@ -17,15 +17,24 @@ public class RedditController {
     }
 
     @GetMapping("/reddit")
-    public String reddit(Model model){
-        model.addAttribute("posts", redditService.findByAllOrder());
+    public String reddit(@RequestParam(required = false) Long pagenumber, Model model){
+        if(pagenumber == null){
+            model.addAttribute("posts", redditService.findByAllOrderByPage(1L));
+            model.addAttribute("pagenumber", 1L);
+        }else{
+            model.addAttribute("posts", redditService.findByAllOrderByPage(pagenumber));
+            model.addAttribute("pagenumber", pagenumber);
+        }
+
+        model.addAttribute("pagelist", redditService.pageList());
+
         return "list-posts";
     }
 
-    @GetMapping("/reddit{id}")
+    @GetMapping("/reddit/{id}")
     public String upvote(@PathVariable Long id, @RequestParam Integer voting){
         redditService.voting(id, voting);
-        return "redirect:/reddit";
+        return "redirect:/reddit?pagenumber=" + redditService.getPageNumber();
     }
 
     @GetMapping("/new-post")
@@ -38,4 +47,11 @@ public class RedditController {
         redditService.save(reddit);
         return "redirect:/reddit";
     }
+
+    @GetMapping("/last-page")
+    public String lastPage(){
+        return "redirect:/reddit?pagenumber=" + redditService.pageTotalNumber();
+    }
+
+
 }

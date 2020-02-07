@@ -11,32 +11,56 @@
 
 <body>
 
-    <h1>
-        Trending posts
-    </h1>
+<h1>
+    Trending posts
+</h1>
 
-    <hr>
+<hr>
 
-    <h3>
-        <a href="/new-post">submit new post</a>
-    </h3>
+<h3>
+    <a href="/new-post">submit new post</a>
+</h3>
 
-    <hr>
+<hr>
 
-    <table>
+<table>
 
-        <tr th:each="post : ${posts}">
+    <tr>
 
-            <td th:text="${post.likeCounter}"></td>
-            <td><a th:href="@{'/reddit' + ${post.id} (voting = 1)}"><img src="/upvote.png" alt="" height="75"></a></td>
-            <td><a th:href="@{'/reddit' + ${post.id} (voting = -1)}"><img src="/downvote.png" alt="" height="75"></a></td>
-            <td><a th:href="${post.url}" th:text="${post.title}" target="_blank"></a></td>
-            <td th:text="${post.date}"></td>
+        <td>Like Counter</td>
+        <td>upvote</td>
+        <td>downvote</td>
+        <td>post title</td>
+        <td>date</td>
 
-        </tr>
+    </tr>
 
-    </table>
+    <tr th:each="post, mainindex : ${posts}" th:if="${mainindex.index} &lt; 5">
+
+        <td th:text="${post.likeCounter}"></td>
+        <td><a th:href="@{'/reddit/' + ${post.id} (voting = 1)}"><img src="/upvote.png" alt="up vote"></a></td>
+        <td><a th:href="@{'/reddit/' + ${post.id} (voting = -1)}"><img src="/downvote.png" alt="down vote"></a></td>
+        <td><a th:href="${post.url}" th:text="${post.title}" target="_blank"></a></td>
+        <td th:text="${post.date}"></td>
+
+    </tr>
+
+    <tr>
+
+        <td colspan="5">
+            <a th:href="@{/reddit(pagenumber = 1)}"><img src="/left.png"></a>
+            <button type="submit" th:each="page : ${pagelist}"><a th:href="@{/reddit(pagenumber = ${page})}"
+                                                                  th:text="${page}"></a></button>
+            <a th:href="@{/last-page}"><img src="/right.png"></a>
+        </td>
+
+    </tr>
+
+</table>
 
 </body>
 
+<footer>
+
+</footer>
 </html>
