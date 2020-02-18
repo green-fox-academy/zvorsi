@@ -1,15 +1,10 @@
 package com.orsi.demo.controller.Main;
 
-import com.orsi.demo.domain.appenda;
-import com.orsi.demo.domain.doubling;
-import com.orsi.demo.domain.greeter;
+import com.orsi.demo.domain.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class mainController {
@@ -34,7 +29,7 @@ public class mainController {
     @ResponseBody
     public ResponseEntity<greeter> greeter(@RequestParam (required = false) String name, String title){
         if (name == null && title == null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            return ResponseEntity.badRequest()
                     .body(new greeter());
         }else if (title == null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -50,8 +45,34 @@ public class mainController {
         /*if (appendable == null){
             return  ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new appenda());
-        }*/
+        } nem kell a null, mert ugysem talalja meg, ha nem adom meg*/
+
         return ResponseEntity.ok()
                 .body(new appenda(appendable));
+    }
+
+    @PostMapping("/dountil/{action}")
+    public ResponseEntity<dountil> dountil(@PathVariable String action, @RequestBody (required = false) dountil until){
+        if (until.getUntil() == null) {
+            return ResponseEntity.badRequest()
+                    .body(new dountil());
+        }
+        return ResponseEntity.ok()
+                .body(new dountil(until.getUntil(), action));
+    }
+
+
+    @PostMapping("/arrays")
+    @ResponseBody
+    public ResponseEntity<arrayHandler> arrays(@RequestBody arrayHandler handler){
+        if (handler.getWhat() == null && handler.getNumbers() == null){
+            return ResponseEntity.badRequest()
+                    .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));
+        }else if (handler.getWhat().equals("double")){
+            return ResponseEntity.ok()
+                    .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));
+        }
+        return ResponseEntity.ok()
+                .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));
     }
 }
