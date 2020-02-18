@@ -1,6 +1,8 @@
 package com.orsi.demo.controller.Main;
 
-import com.orsi.demo.domain.Doubling;
+import com.orsi.demo.domain.doubling;
+import com.orsi.demo.domain.greeter;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,14 +19,28 @@ public class mainController {
 
     @GetMapping("/doubling")
     @ResponseBody
-    public ResponseEntity<Doubling> doubling(@RequestParam (required = false) Integer input){
+    public ResponseEntity<doubling> doubling(@RequestParam (required = false) Integer input){
         if (input == null){
             return ResponseEntity.ok()
-                    .body(new Doubling());
+                    .body(new doubling());
         }
 
         return ResponseEntity.ok()
-                .body(new Doubling(input, input * 2));
+                .body(new doubling(input, input * 2));
     }
 
+    @GetMapping("/greeter")
+    @ResponseBody
+    public ResponseEntity<greeter> greeter(@RequestParam (required = false) String name, String title){
+        if (name == null && title == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new greeter());
+        }else if (title == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new greeter("Please provide a title!"));
+        }
+
+        return ResponseEntity.ok()
+                .body(new greeter(name, title));
+    }
 }

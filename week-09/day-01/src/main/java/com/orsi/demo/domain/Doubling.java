@@ -3,21 +3,21 @@ package com.orsi.demo.domain;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Doubling {
+public class doubling {
 
     private Integer result;
-    private Integer input;
-    private String errorMessage;
+    private Integer received;
+    private String error;
 
-    public Doubling(Integer input, Integer result){
-        this.input = input;
+    public doubling(Integer received, Integer result){
+        this.received = received;
         this.result = result;
     }
 
-    public Doubling(){
-        this.input = null;
+    public doubling(){
+        this.received = null;
         this.result = null;
-        this.errorMessage = "provide an input number";
+        this.error = "Please provide an input!";
     }
 
     public Integer getResult() {
@@ -28,19 +28,19 @@ public class Doubling {
         this.result = result;
     }
 
-    public Integer getInput() {
-        return input;
+    public Integer getReceived() {
+        return received;
     }
 
-    public void setInput(Integer input) {
-        this.input = input;
+    public void setReceived(Integer received) {
+        this.received = received;
     }
 
-    public String getErrorMessage() {
-        return errorMessage;
+    public String getError() {
+        return error;
     }
 
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public void setError(String error) {
+        this.error = error;
     }
 }
