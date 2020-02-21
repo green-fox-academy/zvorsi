@@ -52,7 +52,18 @@ class GuardianControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(contentType))
-                .andExpect(jsonPath("$.message", is("")));
+                .andExpect(jsonPath("$.error", is("I am groot hiba")));
+
+    }
+
+    @Test
+    void groot_TestNullMessage() throws Exception {
+        this.mockMvc
+                .perform(get("/groot")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.error", is("I am groot hiba")));
 
     }
 }
