@@ -66,4 +66,29 @@ class GuardianControllerTest {
                 .andExpect(jsonPath("$.error", is("I am groot hiba")));
 
     }
+
+    @Test
+    void yonduArrowSpeedParamsOk() throws Exception {
+        this.mockMvc
+                .perform(get("/yondu")
+                        .param("distance", "100.0")
+                        .param("time", "10.0")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.distance", is(100.0)))
+                .andExpect(jsonPath("$.time", is(10.0)))
+                .andExpect(jsonPath("$.speed", is(10.0)))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void yonduArrowSpeedWithoutParams() throws Exception {
+        this.mockMvc
+                .perform(get("/yondu")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.error", is("time and distance is needed")))
+                .andExpect(status().isBadRequest());
+    }
+
 }
