@@ -5,7 +5,6 @@ public class Yondu {
     private Double speed;
     private Double distance;
     private Double time;
-    //private String error;
 
     public Yondu(Double distance, Double time) {
         if (time != null && distance != null){
@@ -38,12 +37,4 @@ public class Yondu {
     public void setTime(Double time) {
         this.time = time;
     }
-
-   /* public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }*/
 }
