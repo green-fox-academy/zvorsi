@@ -84,3 +84,52 @@ for (let i: number = 1; i < 101; i++){
         console.log(i);
     }
 }
+
+// diamond
+let lineCount: number = 3;
+/*let mySpace: string = "";
+let star: string = "*";
+for (let i: number = 1; i <= lineCount; i++){
+    for (let j: number = 1; j <= lineCount - 1; j++){
+        //console.log(oneSpace);
+        mySpace += " ";
+    }
+    for (let k: number = 1; k <= (2 * i) - 1; k++){
+        //console.log(star);
+        star += "*";
+    }
+    console.log(mySpace + star);
+}
+for (let i: number = lineCount - 1; i > 0; i--){
+    for (let j: number = 1; j <= lineCount - i; j++){
+        console.log(mySpace);
+    }
+    for (let k: number = 1; k <= (2 * i) - 1; k++){
+        console.log(star);
+    }
+    console.log(mySpace);
+}*/
+
+let output = "";          
+let mySpace = "";
+
+for (let i = 0; i < lineCount; i++) { 
+    for (let j = 1; j < (lineCount - i); j++) { 
+        mySpace += " ";
+    }
+    for (let k = 1; k <= (2 * i) + 1; k++) {
+        output += "*";
+    }
+  console.log(mySpace + output);
+    output = "";
+}
+for (let i = lineCount - 2; i >= 0; i--) { 
+    for (let j = lineCount - 1; j < i; j--) { 
+        mySpace += " ";
+    }
+    for (let k = 1; k <= (2 * i) + 1; k++) {
+        output += "*";
+    }
+    console.log(mySpace + output);
+    output = "";
+}
