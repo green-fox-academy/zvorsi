@@ -30,4 +30,4 @@ let daily = 6;
 let totalHours = semester * daily * 5;
 console.log(totalHours);
 let averageDailyWorkHours = 52 / 5;
-console.log((daily / averageDailyWorkHours * 100 ).toFixed(2)  + '%');
+console.log((daily / averageDailyWorkHours * 100).toFixed(2)  + '%');

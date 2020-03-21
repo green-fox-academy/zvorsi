@@ -133,3 +133,7 @@ for (let i = lineCount - 2; i >= 0; i--) {
     console.log(mySpace + output);
     output = "";
 }
+
+//diagonal matrix
+let matrix = [];
+
