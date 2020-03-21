@@ -13,7 +13,7 @@ public class HelloRESTController {
     private HashMap<String, Integer> prevName = new HashMap<String, Integer>();
 
     @RequestMapping(value = "/greeting")
-    public Greeting hello(@RequestParam String name) {
+    public Greeting hello(@RequestParam  String name) {
         if (prevName.containsKey(name)) {
             prevName.put(name, prevName.get(name) + 1);
         } else {
@@ -21,7 +21,8 @@ public class HelloRESTController {
             prevName.put(name, counter);
         }
 
-        return new Greeting(prevName.get(name), "hello " + name);
+        return new Greeting(prevName.get(name), "hello " + name +
+                ", already greeted people: " + prevName.entrySet());
     }
 
 }

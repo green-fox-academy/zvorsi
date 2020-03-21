@@ -15,12 +15,10 @@ public class Extension {
     int maxOfThree(int a, int b, int c) {
         if (a > b && a > c) {
             return a;
-        } else if (c > a && c > b) {
+        } else if (c > b) {
             return c;
-        } else if (b > a && b > c) {
-            return b;
         }
-        return 123;
+        return b;
     }
 
     int median(List<Integer> pool) {
@@ -33,8 +31,7 @@ public class Extension {
         }
     }
 
-    boolean isVowel(char c) {
-        
+    static boolean isVowel(char c) {
         return Arrays.asList('a', 'u', 'o', 'e', 'i').contains(c);
     }
 

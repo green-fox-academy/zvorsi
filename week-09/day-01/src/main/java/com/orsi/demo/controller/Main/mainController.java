@@ -65,12 +65,12 @@ public class mainController {
     @PostMapping("/arrays")
     @ResponseBody
     public ResponseEntity<arrayHandler> arrays(@RequestBody arrayHandler handler){
-        if (handler.getWhat() == null && handler.getNumbers() == null){
+        if (handler.getWhat() == null || handler.getNumbers() == null){
             return ResponseEntity.badRequest()
                     .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));
         }else if (handler.getWhat().equals("double")){
             return ResponseEntity.ok()
-                    .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));
+                    .body(new arrayHandlerDouble(handler.getWhat(), handler.getNumbers()));
         }
         return ResponseEntity.ok()
                 .body(new arrayHandler(handler.getWhat(), handler.getNumbers()));

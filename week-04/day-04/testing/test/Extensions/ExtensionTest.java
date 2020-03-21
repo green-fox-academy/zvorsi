@@ -40,6 +40,15 @@ class ExtensionTest {
     void testMedian_five() {
         assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5)));
     }
+    @Test
+    void testMedian_null() {
+        assertEquals(3, extension.median(null));
+    }
+
+    @Test
+    void testMedian_IstContainsNull() {
+        assertEquals(3, extension.median(Arrays.asList(null)));
+    }
 
     @Test
     void testIsVowel_a() {
@@ -49,6 +58,11 @@ class ExtensionTest {
     @Test
     void testIsVowel_u() {
         assertTrue(extension.isVowel('u'));
+    }
+
+    @Test
+    void testIsVowel_b() {
+        assertFalse(extension.isVowel('b'));
     }
 
     @Test

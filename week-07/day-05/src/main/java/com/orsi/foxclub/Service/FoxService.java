@@ -19,7 +19,6 @@ public interface FoxService {
 
     FoxTrick showTrick(FoxTrick foxTrick); //ez még nem jó
 
-    boolean isFoxAvailable(String name);
 
     //FoxFood changeFood();
 }

@@ -1,6 +1,7 @@
 td{
     border: brown 1px solid;
     padding: 15px;
+    width: 25%
 }
 
 table{
@@ -9,15 +10,16 @@ table{
     padding: 3px;
     position: relative;
     left: 20%;
-}
-
-td{
-    width: 25%;
+    color: white;
 }
 
 #tablehead{
     font-size: larger;
     padding: 10px;
+}
+
+body{
+    background-color: black;
 }
 
 .balance{

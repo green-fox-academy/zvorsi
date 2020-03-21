@@ -20,8 +20,9 @@ public class FoxServiceImpl implements FoxService {
         //if String name = már létező Fox {annak az info oldalat adja vissza}
         // else {foxes.add(fox)}
         //.anyMatch?
-
-        foxes.add(fox);
+        if (!isFoxAvailable(fox.getFoxName())) {
+            foxes.add(fox);
+        }
     }
 
 
@@ -38,8 +39,7 @@ public class FoxServiceImpl implements FoxService {
         }
     }
 
-    @Override
-    public boolean isFoxAvailable(String name) {
+    private boolean isFoxAvailable(String name) {
         return foxes
                 .stream()
                 .anyMatch(f -> f.getFoxName().equals(name));

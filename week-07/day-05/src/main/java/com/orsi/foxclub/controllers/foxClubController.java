@@ -50,6 +50,7 @@ public class foxClubController {
     @PostMapping("/nutrition-store")
     public String nutritionStore(@RequestParam ("foxFoods") FoxFood foxFoods, @RequestParam ("foxDrinks") FoxDrink foxDrinks, Model model){
         System.out.println();
+
         return "nutrition-store";
     }
 

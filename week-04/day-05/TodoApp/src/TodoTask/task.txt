@@ -2,6 +2,6 @@
 [ ] meg tobb csoki
 [x] mazsola
 [ ] 3
-[ ] 3
-[ ] alma
+[x] alma
 [ ] korte
+[ ] operation education

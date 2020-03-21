@@ -8,8 +8,7 @@ public class arrayHandler {
     private String what;
     private Integer[] numbers;
     private Integer result;
-    //@JsonProperty("result")
-    private Integer[] resultArray;
+
 
     public arrayHandler(String what, Integer[] numbers) {
         switch (what) {
@@ -19,18 +18,9 @@ public class arrayHandler {
             case "multiply":
                 this.result = multiply(numbers);
                 break;
-            case "double":
-                this.resultArray = doubleNumber(numbers);
-                break;
         }
     }
 
-    private Integer[] doubleNumber(Integer[] numbers) {
-        for (Integer number : numbers) {
-            number = number * 2;
-        }
-        return numbers;
-    }
 
     private Integer multiply(Integer[] numbers) {
         int result = 1;
@@ -72,11 +62,5 @@ public class arrayHandler {
         this.result = result;
     }
 
-   /* public Integer[] getResultArray() {
-        return resultArray;
-    }
 
-    public void setResultArray(Integer[] resultArray) {
-        this.resultArray = resultArray;
-    }*/
 }
