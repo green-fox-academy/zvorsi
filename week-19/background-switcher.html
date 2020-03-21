@@ -30,10 +30,15 @@
       // 4: Create a timer function that refreshes 
       // the background every 5 seconds
     
-      let ord = Math.random() * 10000000000000000;
-      let body = document.querySelector('body');
+    let ord = Math.random() * 10000000000000000;
+    let body = document.querySelector('body');
 
-      body.style.backgroundImage = 'url ()'
+    body.style.backgroundImage = `url(https://loremflickr.com/g/1280/800/brooklyn/?ord=${ord}?)`;
+
+    setInterval(function () {
+    location.reload(true);
+    console.log(body);
+    }, 5000);
     
     </script>
   </body>
