@@ -1,0 +1,46 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bomb defuse</title>
+</head>
+<body>
+  <div class="display">10</div>
+  <button type="button">Defuse</button>
+</body>
+  <script>
+    // Create a timeout that will set the display to 
+    //  "Bomb exploded" in 10 seconds
+    // If you click on the button set the display to 
+    //  "Bomb defused" and stop the timeout
+    // Extra: create an interval which will update 
+    // the remaining seconds in the display
+
+
+    let display = document.getElementsByClassName('display')[0];
+    let button = document.getElementsByTagName('button')[0];
+
+    let nums = [10,9,8,7,6,5,4,3,2,1,0];
+    let counter = 0;
+
+    function updateSeconds () {
+    if (nums[counter] === 0) {
+        display.textContent = "Bomb exploded";
+    } else if (nums[counter] <= 10) {
+        display.textContent = nums[counter];
+        counter++;
+    }
+    }
+
+    let timeout = setInterval(updateSeconds, 1000);
+
+    button.onclick = function () {
+    clearInterval(timeout);
+    display.textContent = 'Bomb defused, remianing seconds: ' + (10 - counter);
+    }
+
+  </script>
+</html>
