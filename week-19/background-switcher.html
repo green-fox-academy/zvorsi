@@ -13,6 +13,8 @@
         background-color: black;
         background-size: cover;
         background-position: center center;
+        background-size: contain;
+        background-repeat:no-repeat;
       }
     </style>
   </head>
@@ -33,7 +35,7 @@
     let ord = Math.random() * 10000000000000000;
     let body = document.querySelector('body');
 
-    body.style.backgroundImage = `url(https://loremflickr.com/g/1280/800/brooklyn/?ord=${ord}?)`;
+    body.style.backgroundImage = `url(https://loremflickr.com/g/1920/1080/brooklyn/?ord=${ord}?)`;
 
     setInterval(function () {
     location.reload(true);
