@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>my Reddit clone like thingy</title>
+  <link rel="stylesheet" href="../assets/style.css" type="text/css">
+</head>
+
+<body>
+
+  <h5>my Reddit clone like thingy</h5>
+
+  <h1>
+    Submit new post
+  </h1>
+
+  <hr>
+
+  <h3>
+    <a href="/reddit">Trending posts</a>
+  </h3>
+
+  <hr>
+
+  <form action="/new-post" method="POST">
+  
+  <table>
+    <tr>
+      <td><label for="title">Title:</label></td>
+      <td><input type="text" name="title" id="title"></td>
+    </tr>
+
+    <tr>
+      <td><label for="url">URL:</label></td>
+      <td><input type="text" name="url" id="url"></td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+          <button type="submit" value="submit"><img src="../assets/button2.png"><br>submit</button>
+      </td>
+  </tr>
+
+  </table>
+
+</form>
+
+</body>
+
+</html>

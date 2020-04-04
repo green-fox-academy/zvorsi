@@ -17,6 +17,13 @@ h3{
     color: aquamarine;
 }
 
+h5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aquamarine;
+}
+
 hr{
     border: aquamarine 1px dotted;
 }
@@ -35,6 +42,7 @@ table{
 }
 
 tr{
+    border: aquamarine 1px solid;
 }
 
 td{

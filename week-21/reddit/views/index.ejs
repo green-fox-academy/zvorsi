@@ -10,7 +10,7 @@
 
 <body>
 
-  <h1>my Reddit clone like thingy</h1>
+  <h5>my Reddit clone like thingy</h5>
 
   <h1>
     Trending posts
@@ -36,8 +36,8 @@
     <% for(let i = 0; i < rows.length; i++){ %>
     <tr>
       <td><%= rows[i].like_counter %></td>
-      <td><img src="../assets/upvote.png" alt="upvote"></td>
-      <td><img src="../assets/downvote.png" alt="downvote"></td>
+      <td><a href="/upvote/:id?"><img src="../assets/upvote.png" alt="upvote"></a></td>
+      <td><a href="/downvote/:id=?"><img src="../assets/downvote.png" alt="downvote"></a></td>
       <td><a href="<%= rows[i].url %>" target="blank"><%= rows[i].title %></a></td>
       <td><%= rows[i].post_date %></td>
       <% } %>
