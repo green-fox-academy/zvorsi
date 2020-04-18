@@ -1,0 +1,51 @@
+@import url('http://fonts.googleapis.com/css?family=Montserrat');
+body {
+    display: block;
+    max-width: 400px;
+    margin: auto;
+    background-color: whitesmoke;
+    font-family: Montserrat;
+}
+
+form {
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: white;
+    width: auto;
+}
+
+input[type='text'],
+input[type='password'] {
+    display: block;
+    margin: 10px;
+    padding: 30px, 15px, 30px, 15px;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 4px;
+    width: 300px;
+    height: 25px;
+}
+
+input:focus {
+    outline: 2px greenyellow;
+}
+
+button {
+    border-radius: 30px;
+    border: none;
+    padding: 12px 38px;
+    margin-top: 15px;
+    background: black;
+    color: whitesmoke;
+}
+
+.forgot {
+    text-align: right;
+    font-size: 13px;
+    margin-top: 5px;
+    max-width: 210px;
+}
+
+.heading {
+    font-size: 30px;
+}
