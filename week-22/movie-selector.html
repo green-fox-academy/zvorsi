@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie selector</title>
+    <link rel="stylesheet" href="movie-selector.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-box">
+            <h3>Movie Selector</h3>
+            <form>
+                <div class="list">
+                    <select name="genre" id="genre" required>
+                    <option value="" disabled selected>Select a genre</option>
+                    <option value='sci-fi'>Sci-fi</option>
+                    <option value='drama'>Drama</option>
+                    <option value='action'>Action</option>
+                    </select>
+                </div>
+                <div class="list">
+                    <select name="movie" id="movie" required>
+                    <option value="" disabled selected>Select a movie</option>
+                    <option class='sci-fi' value='Moon'>Moon</option>
+                    <option class='sci-fi' value='2001 Space Odessy'>2001 Space Odessy</option>
+                    <option class='sci-fi' value='Contact'>Contact</option>
+                    <option class='drama' value='Darkest Hour'>Darkest Hour</option>
+                    <option class='drama' value='There Will Be Blood'>There Will Be Blood</option>
+                    <option class='drama' value='American Beauty'>American Beauty</option>
+                    <option class='action' value='Airplane!'>Airplane!</option>
+                    <option class='action' value='Deadpool'>Deadpool</option>
+                    <option class='action' value="Wayne's World">Wayne's World</option>
+                    </select>
+                </div>
+            </form>
+            <div class="selected">
+                <p>The selected movie is: </p>
+                <h4 class="selectedMovie"></h4>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const genre = document.querySelector('#genre');
+        const movie = document.querySelector('#movie');
+        const movies = document.querySelectorAll('#movie option');
+        const selected = document.querySelector('.selectedMovie');
+
+        genre.addEventListener('click', (e) => {
+            movies.forEach(el => {
+                if (el.className !== e.target.value) {
+                    el.setAttribute('hidden', true);
+                } else {
+                    el.removeAttribute('hidden');
+                }
+            });
+        });
+
+        movie.addEventListener('change', (e) => {
+            selectedMovie = e.target.value;
+            selected.textContent = selectedMovie;
+        });
+    </script>
+</body>
+
+</html>
