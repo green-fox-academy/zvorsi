@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Button disable</title>
+    <link rel="stylesheet" type="text/css" href="button-disable.css" />
+</head>
+
+<body>
+    <form action="/button-disable.html" method="get">
+        <h3>What is your favourite pet?</h3>
+
+        <div>
+            <input type="radio" id="dog" name="pet" value="dog">
+            <label for="dog">Dog</label>
+            <input type="radio" id="cat" name="pet" value="cat">
+            <label for="cat">Cat</label>
+            <input type="radio" id="fish" name="pet" value="fish">
+            <label for="fish">Viktor the goldfish</label>
+        </div>
+
+        <h3>Do you want to sign up for cat facts?</h3>
+
+        <div>
+            <input type="radio" id="yes" name="catFact" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="catFact" value="no">
+            <label for="no">No</label>
+        </div>
+
+        <div>
+            <button type="submit" id="love" disabled>I love cats</button>
+            <button type="submit" id="signUp" disabled>Sign up</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        const dog = document.querySelector('#dog');
+        const cat = document.querySelector('#cat');
+        const fish = document.querySelector('#fish');
+        const radioYes = document.querySelector('#yes');
+        const radioNo = document.querySelector('#no');
+        const love = document.querySelector('#love');
+        const signUp = document.querySelector('#signUp');
+
+        form.addEventListener('click', (e) => {
+
+            if (signUp.hasAttribute('disabled') && (e.target.id === 'dog' || e.target.id === 'cat' || e.target.id === 'fish')) {
+                signUp.removeAttribute('disabled');
+            }
+            if (e.target.id === 'yes') {
+                love.removeAttribute('disabled');
+            }
+            if (e.target.id === 'no') {
+                love.setAttribute('disabled', true);
+            }
+            if (e.target === signUp && radioYes.checked) {
+                alert('Thank you, you\'ve signed up for cat facts');
+            }
+            if (e.target === signUp && radioNo.checked && fish.checked) {
+                alert('Sigh, we still added you to the cat fact list.');
+            }
+        });
+    </script>
+</body>
+
+</html>
