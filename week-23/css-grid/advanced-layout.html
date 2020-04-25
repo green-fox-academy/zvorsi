@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>advanced layout</title>
+    <style>
+        body {
+            border: black 2px solid;
+            border-radius: 10px;
+        }
+        
+        div {
+            margin: 15px;
+        }
+        
+        header {
+            display: flex;
+            background: orchid;
+            border-radius: 5px 5px 0px 0px;
+        }
+        
+        .menu {
+            background: cyan;
+            height: 20px;
+            width: 75px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 4fr 4fr;
+            background: white;
+            grid-gap: 10px;
+            height: 500px;
+        }
+        
+        .green {
+            background: #51d400;
+        }
+        
+        .double {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .subdouble {
+            background: #51d400;
+        }
+        
+        .red {
+            background: red;
+            position: relative;
+            height: 70%;
+            width: 60%;
+            margin: 20%;
+        }
+        
+        footer {
+            grid-column: 1/2;
+            background: lightgray;
+            margin: 10px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+    </header>
+
+    <div class="content">
+        <section class="green"></section>
+        <section class="green"></section>
+        <section class="green"></section>
+        <section class="double">
+            <aside class="subdouble">
+                <div class="red"></div>
+            </aside>
+            <aside class="subdouble">
+                <div class="red"></div>
+            </aside>
+        </section>
+    </div>
+    <footer></footer>
+
+</body>
+
+</html>
