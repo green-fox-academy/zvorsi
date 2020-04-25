@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple layout</title>
+    <style>
+        body {
+            border: black 2px solid;
+            border-radius: 10px;
+        }
+        
+        div {
+            margin: 15px;
+        }
+        
+        .above {
+            grid-column: 1/10;
+            min-height: 30px;
+        }
+        
+        header {
+            display: flex;
+            /* display: grid;
+            grid-template-columns: repeat(10 1fr); */
+            background: orchid;
+            /* grid-gap: 5px; */
+        }
+        
+        .menu {
+            /* display: grid;
+            grid-template-columns: repeat(10 1fr); */
+            background: cyan;
+            /* grid-row: 1/1; */
+            height: 20px;
+            /* grid-gap: 15px; */
+            width: 100px;
+        }
+        
+        .content {
+            grid-column: 1/10;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background: white;
+            grid-gap: 10px;
+            height: 200px;
+        }
+        
+        aside {
+            background: greenyellow;
+            grid-gap: 5px;
+        }
+        
+        main {
+            background: rgb(255, 217, 0);
+        }
+        
+        footer {
+            grid-column: 1/10;
+            background: lightgray;
+            margin: 10px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="above"></div>
+    <header>
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+    </header>
+    <div class="content">
+        <aside></aside>
+        <main></main>
+    </div>
+    <footer></footer>
+
+</body>
+
+</html>
