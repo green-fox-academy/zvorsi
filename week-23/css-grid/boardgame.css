@@ -1,0 +1,48 @@
+.board {
+    border: black 1 px solid;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background: black;
+    height: 600px;
+    background: black;
+    grid-gap: 2px;
+}
+
+.field {
+    background: rgb(255, 208, 0);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 45%;
+    height: 45%;
+    background: blueviolet;
+    color: white;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.green {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: rgb(0, 219, 0);
+    grid-column: 2/7;
+    grid-row: 2/5;
+}
+
+#diagonal span {
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+}
+
+#diagonal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
