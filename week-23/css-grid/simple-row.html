@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple row</title>
+    <style>
+        body {
+            color: white;
+            text-align: center;
+        }
+        
+        #content {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            margin: 0 auto;
+        }
+        
+        #content div {
+            background: rgb(255, 217, 0);
+            padding: 30px;
+            border: darkorchid 4px solid;
+        }
+        
+        #content div:nth-child(even) {
+            background: rgb(23, 194, 23);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div>left</div>
+        <div>60 is my ratio</div>
+        <div>right</div>
+    </div>
+</body>
+
+</html>
