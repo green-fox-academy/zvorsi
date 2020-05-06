@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+
+.item {
+    height: 300px;
+}
+
+.green {
+    background-color: rgb(32, 253, 32);
+    flex: 1;
+}
+
+.yellow {
+    background-color: rgb(252, 252, 53);
+    flex: 2;
+}
+
+.purple {
+    background-color: rgb(252, 74, 252);
+    flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .item {
+        max-width: 600px;
+        min-height: 100px;
+    }
+}
