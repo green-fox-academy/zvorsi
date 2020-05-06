@@ -1,28 +1,37 @@
 body {
-    background: blue;
+    background: #3e94ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 table {
     border-collapse: collapse;
     width: 75%;
-    background-color: lightgray;
+    background-color: #ebebeb;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 td {
-    padding: 3%;
-    border: gray 2px solid;
-    color: grey;
+    padding: 4%;
+    border: #9ea7af 1px solid;
+    border-radius: 5px;
+    color: #898d92;
 }
 
 th {
     background: black;
     color: whitesmoke;
-    padding: 3%;
+    padding: 4%;
     text-align: left;
+    border-bottom: #9ea7af 2px solid;
+    font-weight: normal;
 }
 
 tbody>tr:nth-of-type(even) {
-    background-color: lightsalmon;
+    background-color: #ffffff;
 }
 
 tbody>tr>td:nth-of-type(2n)::before {
