@@ -3,47 +3,59 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>my Reddit clone like thingy</title>
-  <link rel="stylesheet" href="../assets/style.css" type="text/css">
+    <meta charset="utf-8" />
+    <title>my Reddit clone like thingy</title>
+    <link rel="stylesheet" href="../assets/style.css" type="text/css">
 </head>
 
 <body>
 
-  <h5>my Reddit clone like thingy</h5>
+    <h5>my Reddit clone like thingy</h5>
 
-  <h1>
-    Trending posts
-  </h1>
+    <h1>
+        Trending posts
+    </h1>
 
-  <hr>
+    <hr>
 
-  <h3>
-    <a href="/new-post">submit new post</a>
-  </h3>
+    <h3>
+        <a href="/new-post">submit new post</a>
+    </h3>
 
-  <hr>
+    <hr>
 
-  <table>
-    <tr>
-      <td>like number</td>
-      <td>upvote</td>
-      <td>downvote</td>
-      <td>post title</td>
-      <td>date</td>
-    </tr>
+    <table>
+        <tr>
+            <td>like number</td>
+            <td>upvote</td>
+            <td>downvote</td>
+            <td>post title</td>
+            <td>date</td>
+        </tr>
 
-    <% for(let i = 0; i < rows.length; i++){ %>
-    <tr>
-      <td><%= rows[i].like_counter %></td>
-      <td><a href="/upvote/:id?"><img src="../assets/upvote.png" alt="upvote"></a></td>
-      <td><a href="/downvote/:id=?"><img src="../assets/downvote.png" alt="downvote"></a></td>
-      <td><a href="<%= rows[i].url %>" target="blank"><%= rows[i].title %></a></td>
-      <td><%= rows[i].post_date %></td>
-      <% } %>
-    </tr>
+        <% for(let i = 0; i < rows.length; i++){ %>
+            <tr>
+                <td>
+                    <%= rows[i].like_counter %>
+                </td>
+                <td>
+                    <a href="/reddit/:id/upvote"><img src="../assets/upvote.png" alt="upvote"></a>
+                </td>
+                <td>
+                    <a href="/reddit/:id/downvote"><img src="../assets/downvote.png" alt="downvote"></a>
+                </td>
+                <td>
+                    <a href="<%= rows[i].url %>" target="blank">
+                        <%= rows[i].title %>
+                    </a>
+                </td>
+                <td>
+                    <%= rows[i].post_date %>
+                </td>
+                <% } %>
+            </tr>
 
-  </table>
+    </table>
 
 </body>
 
